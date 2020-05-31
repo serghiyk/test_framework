@@ -8,7 +8,7 @@ import page_package.PageClass;
 public class TestClass {
 
     @Test
-    void openGoogle() {
+    public void openGoogle() {
         log.warn("Suggestion displayed");
         new PageClass().openGoogleUaPage()
                 .typeTextIntoSearchField("Hello")

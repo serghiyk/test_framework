@@ -4,10 +4,9 @@ plugins {
 }
 
 allure {
-    version = '2.13.3'
+    version = '2.13.0'
     autoconfigure = true
     aspectjweaver = true
-    allureJavaVersion = '2.13.3'
 }
 
 sourceCompatibility = 1.8
@@ -20,12 +19,15 @@ dependencies {
     compile group: 'com.codeborne', name: 'selenide', version: '5.12.0'
     compile group: 'org.projectlombok', name: 'lombok', version: '1.18.12'
     compile group: 'io.qameta.allure', name: 'allure-selenide', version: '2.13.3'
+    compile group: 'io.qameta.allure', name: 'allure-testng', version: '2.13.3'
     compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.13.3'
-    testCompile group: 'org.testng', name: 'testng', version: '7.1.0'
+    compile group: 'org.apache.logging.log4j', name: 'log4j-slf4j-impl', version: '2.13.3'
+    compile group: 'org.testng', name: 'testng', version: '7.1.0'
 }
 
 test {
     useTestNG()
+    testLogging.showStandardStreams = true
 }
 
 task wrapperNew(type: Wrapper) {
